@@ -31,12 +31,14 @@ def myCallback(pin):
       for d4 in range(101):
         pwm2.ChangeDutyCycle(101 - d4)
         sleep(0.01)
-    while 1:
-      pwm3.start(50)
   except KeyboardInterrupt:
     print('\nExiting')
 
-
+try:
+  while 1:
+    pwm3.start(50)
+except KeyboardInterrupt:
+  print('\nExiting')
 
 
 GPIO.add_event_detect(5, GPIO.RISING, callback=myCallback,bouncetime=500)
