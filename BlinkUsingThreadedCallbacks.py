@@ -19,20 +19,24 @@ def myCallback(pin):
       pwm1.start(0)
       for d1 in range(101):
         pwm1.ChangeDutyCycle(d1)
-        sleep(0.01)
+        sleep(0.005)
       for d2 in range(101):
         pwm1.ChangeDutyCycle(101 - d2)
-        sleep(0.01)
+        sleep(0.005)
     if pin == 21:
       pwm2.start(0)
       for d3 in range(101):
         pwm2.ChangeDutyCycle(d3)
-        sleep(0.01)
+        sleep(0.005)
       for d4 in range(101):
         pwm2.ChangeDutyCycle(101 - d4)
-        sleep(0.01)
+        sleep(0.005)
   except KeyboardInterrupt:
     print('\nExiting')
+
+
+GPIO.add_event_detect(5, GPIO.RISING, callback=myCallback,bouncetime=200)
+GPIO.add_event_detect(6, GPIO.RISING, callback=myCallback,bouncetime=200)
 
 try:
   while 1:
@@ -41,9 +45,6 @@ except KeyboardInterrupt:
   print('\nExiting')
 
 
-GPIO.add_event_detect(5, GPIO.RISING, callback=myCallback,bouncetime=500)
-GPIO.add_event_detect(6, GPIO.RISING, callback=myCallback,bouncetime=500)
-# Infinite loop:
 pwm1.stop()
 pwm2.stop()
 pwm3.stop()
