@@ -16,19 +16,19 @@ pwm3 = GPIO.PWM(24, 1)
 def myCallback(pin):
   if pin == 5:
     pwm1.start(0)
-    for d1 in range(101):
+    for d1 in range(100):
       pwm1.ChangeDutyCycle(d1)
       sleep(0.005)
-    for d2 in range(101):
-      pwm1.ChangeDutyCycle(101 - d2)
+    for d2 in range(100):
+      pwm1.ChangeDutyCycle(100 - d2)
       sleep(0.005)
   if pin == 6:
     pwm2.start(0)
-    for d3 in range(101):
+    for d3 in range(100):
       pwm2.ChangeDutyCycle(d3)
       sleep(0.005)
-    for d4 in range(101):
-      pwm2.ChangeDutyCycle(101 - d4)
+    for d4 in range(100):
+      pwm2.ChangeDutyCycle(100 - d4)
       sleep(0.005)
   
 
