@@ -41,10 +41,11 @@ try:
     pwm24.start(50)
 except KeyboardInterrupt:
   print('\nExiting')
+  pwm4.stop()
+  pwm23.stop()
+  pwm24.stop()
+  GPIO.cleanup()
 
 
-pwm4.stop()
-pwm23.stop()
-pwm24.stop()
 
-GPIO.cleanup()
+
