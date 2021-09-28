@@ -9,26 +9,26 @@ GPIO.setup(5, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(6, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 
-pwm1 = GPIO.PWM(4, 1)
-pwm2 = GPIO.PWM(23, 1)
-pwm3 = GPIO.PWM(24, 1)
+pwm4 = GPIO.PWM(4, 1)
+pwm23 = GPIO.PWM(23, 1)
+pwm24 = GPIO.PWM(24, 1)
 
 def myCallback(pin):
   if pin == 5:
-    pwm1.start(0)
+    pwm4.start(0)
     for d1 in range(100):
-      pwm1.ChangeDutyCycle(d1)
+      pwm4.ChangeDutyCycle(d1)
       sleep(0.005)
     for d2 in range(100):
-      pwm1.ChangeDutyCycle(100 - d2)
+      pwm4.ChangeDutyCycle(100 - d2)
       sleep(0.005)
   if pin == 6:
-    pwm2.start(0)
+    pwm23.start(0)
     for d3 in range(100):
-      pwm2.ChangeDutyCycle(d3)
+      pwm23.ChangeDutyCycle(d3)
       sleep(0.005)
     for d4 in range(100):
-      pwm2.ChangeDutyCycle(100 - d4)
+      pwm23.ChangeDutyCycle(100 - d4)
       sleep(0.005)
   
 
@@ -38,13 +38,13 @@ GPIO.add_event_detect(6, GPIO.RISING, callback=myCallback,bouncetime=200)
 
 try:
   while 1:
-    pwm3.start(50)
+    pwm24.start(50)
 except KeyboardInterrupt:
   print('\nExiting')
 
 
-pwm1.stop()
-pwm2.stop()
-pwm3.stop()
+pwm4.stop()
+pwm23.stop()
+pwm24.stop()
 
 GPIO.cleanup()
