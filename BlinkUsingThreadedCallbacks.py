@@ -14,6 +14,7 @@ pwm23 = GPIO.PWM(23, 1)
 pwm24 = GPIO.PWM(24, 1)
 
 def myCallback(pin):
+  print('ee')
   if pin == 5:
     pwm4.start(0)
     for d1 in range(100):
