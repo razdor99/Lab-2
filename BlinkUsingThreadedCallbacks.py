@@ -3,8 +3,8 @@ from time import sleep
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.OUT)
-GPIO.setup(20, GPIO.OUT)
-GPIO.setup(21, GPIO.OUT)
+GPIO.setup(23, GPIO.OUT)
+GPIO.setup(24, GPIO.OUT)
 GPIO.setup(5, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(6, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
@@ -14,7 +14,7 @@ pwm2 = GPIO.PWM(20, 1)
 pwm3 = GPIO.PWM(21, 1)
 
 def myCallback(pin):
-  if pin == 20:
+  if pin == 23:
     pwm1.start(0)
     for d1 in range(101):
       pwm1.ChangeDutyCycle(d1)
@@ -22,7 +22,7 @@ def myCallback(pin):
     for d2 in range(101):
       pwm1.ChangeDutyCycle(101 - d2)
       sleep(0.005)
-  if pin == 21:
+  if pin == 24:
     pwm2.start(0)
     for d3 in range(101):
       pwm2.ChangeDutyCycle(d3)
