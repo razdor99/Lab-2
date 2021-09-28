@@ -10,8 +10,8 @@ GPIO.setup(6, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 
 pwm1 = GPIO.PWM(4, 1)
-pwm2 = GPIO.PWM(20, 1)
-pwm3 = GPIO.PWM(21, 1)
+pwm2 = GPIO.PWM(23, 1)
+pwm3 = GPIO.PWM(24, 1)
 
 def myCallback(pin):
   if pin == 23:
