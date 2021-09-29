@@ -18,18 +18,18 @@ def myCallback(pin):
     pwm4.start(0)
     for d1 in range(100):
       pwm4.ChangeDutyCycle(d1)
-      sleep(0.05)
+      sleep(0.001)
     for d2 in range(100):
-      pwm4.ChangeDutyCycle(100 - int(d2))
-      sleep(0.05)
+      pwm4.ChangeDutyCycle(100 - d2)
+      sleep(0.001)
   if pin == 6:
     pwm23.start(0)
     for d3 in range(100):
       pwm23.ChangeDutyCycle(d3)
-      sleep(0.05)
+      sleep(0.001)
     for d4 in range(100):
-      pwm23.ChangeDutyCycle(100 - int(d4))
-      sleep(0.05)
+      pwm23.ChangeDutyCycle(100 - d4)
+      sleep(0.001)
   
 
 
