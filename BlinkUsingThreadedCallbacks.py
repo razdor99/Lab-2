@@ -20,7 +20,7 @@ def myCallback(pin):
       pwm4.ChangeDutyCycle(d1)
       sleep(0.05)
     for d2 in range(100):
-      pwm4.ChangeDutyCycle(100 - d2)
+      pwm4.ChangeDutyCycle(100 - int(d2))
       sleep(0.05)
   if pin == 6:
     pwm23.start(0)
@@ -28,7 +28,7 @@ def myCallback(pin):
       pwm23.ChangeDutyCycle(d3)
       sleep(0.05)
     for d4 in range(100):
-      pwm23.ChangeDutyCycle(100 - d4)
+      pwm23.ChangeDutyCycle(100 - int(d4))
       sleep(0.05)
   
 
